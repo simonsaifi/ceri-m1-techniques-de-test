@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/my-project
+    steps:
+      - checkout
+      - run: mvn clean install
+      - run:
+          name: Run Unit Tests
+          command: mvn test
+    filters:
+      branches:
+        only: master
