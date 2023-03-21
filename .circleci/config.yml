@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-    working_directory: ~/ceri-m1-techniaues-de-test
+    working_directory: ~/ceri-m1-techniques-de-test
     steps:
       - checkout
       - run: mvn clean install
