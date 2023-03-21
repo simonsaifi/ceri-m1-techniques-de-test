@@ -1,16 +1,21 @@
 version: 2.1
 
 jobs:
-  build:
-    docker:
-      - image: circleci/openjdk:8-jdk
-    working_directory: ~/ceri-m1-techniques-de-test
-    steps:
-      - checkout
-      - run: mvn clean install
-      - run:
-          name: Run Unit Tests
-          command: mvn test
+  - build:
+      docker:
+        - image: circleci/openjdk:8-jdk
+      working_directory: ~/ceri-m1-techniques-de-test
+      steps:
+        - checkout
+        - run: mvn clean install
+        - run:
+            name: Run Unit Tests
+            command: mvn test
+  - deploy-stage:
+    requires:
+      - build
     filters:
       branches:
-        only: master
+        only : master
+
+
