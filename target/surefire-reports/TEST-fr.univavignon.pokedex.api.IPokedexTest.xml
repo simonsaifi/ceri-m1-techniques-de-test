@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="fr.univavignon.pokedex.api.IPokedexTest" time="0" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="fr.univavignon.pokedex.api.IPokedexTest" time="0.034" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.2.2"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -65,8 +65,8 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testSize" time="0"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testGetPokemons2" time="0"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testGetPokemon" time="0"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testAddPokemon" time="0"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testGetPokemons" time="0"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testGetPokemons2" time="0.016"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testGetPokemon" time="0.016"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testAddPokemon" time="0.001"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testGetPokemons" time="0.001"/>
 </testsuite>
