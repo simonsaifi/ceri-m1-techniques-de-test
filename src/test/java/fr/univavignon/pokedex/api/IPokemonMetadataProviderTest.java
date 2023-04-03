@@ -24,4 +24,5 @@ public class IPokemonMetadataProviderTest{
         assertEquals(iPokemonMetadataProvider.getPokemonMetadata(0), pokemonMetadata);
     }
 
+
 }
