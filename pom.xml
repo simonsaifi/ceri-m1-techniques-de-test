@@ -26,6 +26,11 @@
             <version>3.12.4</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>10.1</version>
+        </dependency>
     </dependencies>
     <build>
     <plugins>
@@ -78,20 +83,51 @@
             </executions>
         </plugin>
         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.1.2</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <executions>
+            <execution>
+                <phase>process-classes</phase>
+                <goals>
+                    <goal>checkstyle</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+        <plugin>
+            <groupId>com.github.bordertech.buildtools</groupId>
+            <artifactId>badger</artifactId>
+            <version>1.0.0</version>
             <executions>
                 <execution>
-                    <id>validate</id>
-                    <phase>validate</phase>
+                    <phase>compile</phase>
                     <goals>
-                        <goal>check</goal>
+                        <goal>badges</goal>
                     </goals>
+                    <configuration>
+                        <outputDir>target/site/badges/</outputDir>
+                        <inputFiles>
+                            <inputFile>target/checkstyle-result.xml</inputFile>
+                        </inputFiles>
+                    </configuration>
                 </execution>
             </executions>
         </plugin>
     </plugins>
     <testSourceDirectory>src/test/java</testSourceDirectory>
   </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </reporting>
 </project>

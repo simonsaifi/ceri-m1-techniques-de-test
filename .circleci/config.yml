@@ -16,6 +16,10 @@ jobs:
           command: mvn test
       - codecov/upload
 
+      - run:
+          name: CheckStyle
+          command: mvn -DskipTests checkstyle:checkstyle
+
 workflows:
   build-and-test:
     jobs:
