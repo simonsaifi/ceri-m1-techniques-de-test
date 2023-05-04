@@ -101,7 +101,6 @@
                             <goal>badges</goal>
                         </goals>
                         <configuration>
-                            <skip>${badges.skip}</skip>
                             <outputDir>docs/badges</outputDir>
                             <inputFiles>
                                 <inputFile>target/pmd.xml</inputFile>
