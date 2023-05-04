@@ -96,14 +96,18 @@
                 <version>1.0.0</version>
                 <executions>
                     <execution>
-                        <phase>site</phase>
+                        <phase>validate</phase>
                         <goals>
                             <goal>badges</goal>
                         </goals>
                         <configuration>
-                            <outputDir>target/site/badges</outputDir>
+                            <outputDir>docs/badges</outputDir>
                             <inputFiles>
+                                <inputFile>target/pmd.xml</inputFile>
+                                <inputFile>target/findbugs-report.xml</inputFile>
+                                <inputFile>target/findbugsXml.xml</inputFile>
                                 <inputFile>target/checkstyle-result.xml</inputFile>
+                                <inputFile>target/coverage-report.xml</inputFile>
                             </inputFiles>
                         </configuration>
                     </execution>
