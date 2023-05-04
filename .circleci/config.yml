@@ -21,16 +21,6 @@ jobs:
           command: mvn -DskipTests checkstyle:checkstyle
 
 
-      - run:
-          name: Checkstyle analysis
-          command: checkstyle -c checkstyle.xml src/
-
-      - store_artifacts:
-          path: target/checkstyle-result.xml
-          destination: checkstyle-report
-
-
-
 workflows:
   build-and-test:
     jobs:
