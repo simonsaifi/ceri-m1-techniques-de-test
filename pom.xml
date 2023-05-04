@@ -36,7 +36,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
+                <version>0.8.9</version>
                 <executions>
                     <execution>
                         <goals>
@@ -75,7 +75,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.2.1</version>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
                     <consoleOutput>true</consoleOutput>
@@ -101,7 +101,7 @@
                             <goal>badges</goal>
                         </goals>
                         <configuration>
-
+                            <skip>${badges.skip}</skip>
                             <outputDir>docs/badges</outputDir>
                             <inputFiles>
                                 <inputFile>target/pmd.xml</inputFile>
